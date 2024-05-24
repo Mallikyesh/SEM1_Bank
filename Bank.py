@@ -213,9 +213,9 @@ def capture_image():
 
 # Function to send email
 def send_email(to_email, img_filename, timestamp):
-    from_email = "mallikarjun.yeshlur@gmail.com"
-    from_password = "oubb vfgm cvqw jihd"
-    subject = "ATM Transaction Verification"
+    from_email = "xyz@gmail.com"                                                 #put your email here (sender email)
+    from_password = "oubb vfgm cvqw jihd"                                        #if the sender email is a gmail, then create app password 
+    subject = "ATM Transaction Verification"                                     #on google settings and paste the code here
     body = f"An ATM transaction is being attempted. See the attached image captured at {timestamp}."
 
     msg = MIMEMultipart()
@@ -278,7 +278,7 @@ def atm_transaction():
             print("Welcome back!")
             
             img_filename, timestamp = capture_image()
-            to_email = "pes1202201282@pesu.pes.edu"  # Replace with the actual user's email
+            to_email = "pes1202201282@pesu.pes.edu"  # Replace with the reciever user's email
             send_email(to_email, img_filename, timestamp)
             
             user_approval = input("Enter 'yes' if you approve the transaction: ")
